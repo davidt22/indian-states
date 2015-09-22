@@ -18,14 +18,15 @@ class Reader
     /**
      * Reader constructor.
      */
-    public function __construct($rootDir)
+    public function __construct($rootDir, $file)
     {
         $this->csvParsingOptions['finder_in'] = $rootDir;
+        $this->csvParsingOptions['finder_name'] = $file;
     }
 
 
     /**
-     * Read a csv file and return it to an array
+     * Read a csv file and return it into an array
      *
      * @return array
      */

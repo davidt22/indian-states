@@ -16,7 +16,6 @@ class DefaultController extends Controller
      */
     public function indexAction(Request $request)
     {
-        // replace this example code with whatever you need
         return $this->render('default/index.html.twig', array());
     }
 
@@ -27,7 +26,8 @@ class DefaultController extends Controller
     public function listIndianStatesAction(Request $request)
     {
         $rootDir = $this->get('kernel')->getRootDir() . '/Resources/fixtures/';
-        $csvReader = new Reader($rootDir);
+        $file = 'list-indian-states.csv';
+        $csvReader = new Reader($rootDir, $file);
 
         $dataFixtures = $csvReader->readCSV();
 
