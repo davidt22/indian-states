@@ -9,6 +9,5 @@
 /composer.phar
 /vendor/
 /web/bundles/
-.
-i
-dea/
+.idea/
+.DS_Store
