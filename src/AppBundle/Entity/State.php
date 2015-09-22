@@ -23,7 +23,17 @@ class State
      */
     public function __construct()
     {
-
+        $this->id = '';
+        $this->name = '';
+        $this->population = '';
+        $this->area = '';
+        $this->official = '';
+        $this->capital = '';
+        $this->largestCity = '';
+        $this->populationDensity = '';
+        $this->literacyRate = '';
+        $this->percentajeUrbanPopulation = '';
+        $this->sexRatio = '';
     }
 
     /**
