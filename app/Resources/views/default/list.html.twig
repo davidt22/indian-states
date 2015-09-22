@@ -1,0 +1,82 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}List of Indian States{% endblock %}
+
+{% block body %}
+    <div id="wrapper">
+        <div id="container">
+
+            {#<div>#}
+                {#{{ ladybug_dump(data) }}#}
+            {#</div>#}
+
+            <h1>List of Indian States</h1>
+
+            <table id="indian-states" class="display" cellspacing="0" width="100%">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>Population</th>
+                        <th>Area</th>
+                        <th>Official</th>
+                        <th>Capital</th>
+                        <th>Largest City</th>
+                        <th>Population Density</th>
+                        <th>Literacy Rate</th>
+                        <th>Percentaje Urban Population</th>
+                        <th>Sex Ratio</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {% for state in states %}
+                    <tr>
+                        <td>{{ state.id }}</td>
+                        <td>{{ state.name }}</td>
+                        <td>{{ state.population }}</td>
+                        <td>{{ state.area }}</td>
+                        <td>{{ state.official }}</td>
+                        <td>{{ state.capital }}</td>
+                        <td>{{ state.largestCity }}</td>
+                        <td>{{ state.populationDensity }}</td>
+                        <td>{{ state.literacyRate }}</td>
+                        <td>{{ state.percentajeUrbanPopulation }}</td>
+                        <td>{{ state.sexRatio }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+
+        </div>
+    </div>
+{% endblock %}
+
+{% block stylesheets %}
+<style>
+    body { background: #F5F5F5; font: 18px/1.5 sans-serif; }
+    h1, h2 { line-height: 1.2; margin: 0 0 .5em; }
+    h1 { font-size: 36px; }
+    h2 { font-size: 21px; margin-bottom: 1em; }
+    p { margin: 0 0 1em 0; }
+    a { color: #0000F0; }
+    a:hover { text-decoration: none; }
+    #wrapper { background: #FFF; margin: 1em auto; }
+    #container { padding: 2em; }
+
+    table td {
+        text-align: center;
+    }
+</style>
+{% endblock %}
+
+{% block javascripts %}
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#indian-states').DataTable({
+                "order": [[ 2, "desc" ]]
+            });
+        } );
+    </script>
+{% endblock %}
